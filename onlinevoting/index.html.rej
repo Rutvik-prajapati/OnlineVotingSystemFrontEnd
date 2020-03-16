@@ -1,0 +1,10 @@
+diff a/onlinevoting/index.html b/onlinevoting/index.html	(rejected hunks)
+@@ -8,7 +8,7 @@
+     <meta name="description" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+-.class1:hover{background-color:#4ddbff;border-radius:20px;}
++.class1:hover{background-color:#4ddbff;border-radius:0px;}
+ </style>
+ 
+     <!-- CSS here -->
