@@ -1,128 +1,48 @@
- <!DOCTYPE html>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online Voting</title>
 
-}
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
-input[type=text], select,textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  resize: vertical;
-   margin:4px;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color:white;
-  color: #16a085;
-  padding: 12px 20px;
-  border-radius: 15px;
-  cursor: pointer;
-border: 1px solid #16a085;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #16a085;color:white;
-}
-
-.container {margin-top=0px;margin-left:100px;margin-right:100px;margin-bottom:30px;
-  border-radius: 0px;
-  background-color:white;
-  padding: 50px;
- border:1px solid #16a085;
-/*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
-}
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-h2{color:#16a085;margin-left:80px;font-size: 50px;margin-top:0px;}
-section p{  
-  padding: 12px 20px;
-  float: left;
-}
-#a1{text-decoration:none;color:#003366;}section{margin-top:100px; }
-</style>
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style1.css">
 </head>
-<body><section>
-<h2></h2>
+<body>
 
-<div class="container">
-  <form action="k1.html"target="_blank">
-<h2>Login</h2>
-<div class="row">
-      <div class="col-25">
-        <label for="Login Type">Login Type</label>
-      </div>
-      <div class="col-75">
-        <select id="rtype" name="rtype">
-	<option value="Select Register Type">Select Login Type</option>
-          <option value="Register As User">Login As User</option>
-          <option value="Register As Candidate">Login As Candidate</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="uname">User Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="uname" name="username" placeholder="Your username.."required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="password">Enter Password</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="password" name="password" placeholder="Your Password.."required>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
-  </form>
-<p>New User ? <a id="a1" href="register.html">click</p>
-</div>
+    <div class="main">
 
-</section>
+        <section class="signup">
+            
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Login Your account</h2>
+                      <div class="form-group">Username:
+                            <input type="text" class="form-input" name="username" id="name" placeholder="Your Username" required/>
+                        </div>
+			<div class="form-group">Password:
+                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"required/>
+                        </div>
+			
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Login"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        New User ? <a href="registration.html" class="loginhere-link">Register</a>
+                    </p>
+                </div>
+            </div>
+        </section>
 
+    </div>
+
+   
 </body>
 </html>
-
