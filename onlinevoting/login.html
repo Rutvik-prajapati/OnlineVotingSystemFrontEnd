@@ -12,6 +12,7 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="css/style1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -43,6 +44,31 @@
 
     </div>
 
-   
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $('#submit').click(function () {
+            generateToken();
+          })
+         });
+      </script>
+      
+      
+      <script>
+          function generateToken() {
+              $.ajax({
+                   url: "http://localhost:54546/token",
+                   type: "POST",
+                   data: $.param({ grant_type: 'password', username:$("#name").val(), password:$("#password").val()}),
+                   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                   success: function (resp) {
+                       sessionStorage.setItem('userName', resp.userName);
+                       sessionStorage.setItem('accessToken', resp.access_token);
+                       var authHeaders = {};
+                       authHeaders.Authorization = 'Bearer ' + resp.access_token;
+                       location.replace("index.html");     
+                    }
+               });
+            }
+      </script>
 </body>
 </html>
