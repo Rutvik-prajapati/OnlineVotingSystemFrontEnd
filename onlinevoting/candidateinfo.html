@@ -22,13 +22,13 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
 </head>
 
 <body>
-   
+
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -39,7 +39,7 @@
                             <div class="logo">
                                 <a href="index.html">
                                   <h3 style="color:white">Online Voting</h3>
-                               
+
                                 </a>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                         <li><a href="vote.html">Vote</a></li>
                                         <li><a href="result.html">Result</a></li>
                                         <li><a href="candidateinfo.html">CandidateInfo</a></li>
-                                        <li><a href="contact.html">Contact</a></li>					
+                                        <li><a href="contact.html">Contact</a></li>
                                         <li><a href="#">My Account</a></li>
                                     </ul>
                                 </nav>
@@ -73,6 +73,7 @@
         </div>
     </div>
 
+    <div><h1>hello</h1></div>
  <footer class="footer">
         <div class="footer_top">
             <div class="container">
@@ -80,9 +81,9 @@
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <div class="footer_logo">
-                               
+
                             </div><h3 class="footer_title">Online Voting</h3>
-                           
+
 
                         </div>
                     </div>
@@ -108,16 +109,38 @@
                             </ul>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
-        
+
+        <script>
+                $(document).ready(function() {
+                    var token = window.localStorage;
+                       var authHeaders = {};
+                       authHeaders.Authorization = 'Bearer ' + token.accessToken;
+                    // $('#candidate').click(function () {
+                        $.ajax({
+                            url: "http://localhost:54546/api/Candidate/GetCandidateList",
+                            type: "GET",
+                            
+                            headers: authHeaders,
+                            dataType:"json",
+                            contentType: "application/html; charset=utf-8",
+                            success: function (response) {
+                                // $("#loginEmail").val("");
+                                // $("#loginPwd").val("");
+                                // $("#msg").text(response);
+                                alert(response.Data[0].CandidateElectionProvince);
+                            }
+                        });
+                    // });
+                });
+            </script>
 
 
 
 
-    
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
