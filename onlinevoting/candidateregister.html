@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online Voting</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<style>
+body{ background:linear-gradient(#086972 50%, white 50%);}
+</style>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title"style="color:blue";>Register As Candidate</h2>
+                        
+                            <div  class="form-group">Election Name:
+				<select  class="form-input" required>
+				 <option value="S">Select Election</option>
+ 				 <option value="A">A</option>
+ 				 <option value="B">B</option>
+  				</select></div>
+				<div class="form-group">Youe Name:
+				<select class="form-input" required>
+				 <option value="S">Select Your Name</option>
+ 				 <option value="A">A</option>
+ 				 <option value="B">B</option>
+  				</select></div>
+				<div class="form-group">leader's seat:
+                            <input type="text" class="form-input" name="pname" id="name" placeholder="Area Where You Stand" required/>
+                        </div>
+                        
+			
+			<div class="form-group">Party Name:
+                            <input type="text" class="form-input" name="pname" id="name" placeholder="Your Party Name"/>
+                        </div>
+			<div class="form-group">Election Symbol:
+                            <input type="file" class="form-input" name="symbol"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                        </div>
+                    </form>
+                 
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+   
+</body>
+</html>

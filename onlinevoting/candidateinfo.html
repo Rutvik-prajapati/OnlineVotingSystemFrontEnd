@@ -8,6 +8,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
    <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -45,14 +52,21 @@
                         </div>
                         <div class="col-xl-6 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">
-                                <nav>
+                               <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="index.html">home</a></li>
                                         <li><a href="vote.html">Vote</a></li>
                                         <li><a href="result.html">Result</a></li>
-                                        <li><a href="candidateinfo.html">CandidateInfo</a></li>
-                                        <li><a href="contact.html">Contact</a></li>					
-                                        <li><a href="#">My Account</a></li>
+                                         <li><a href="electioninfo.html">Elections</a></li>
+                                          <li style="color:white">Candidates
+						<ul class="submenu">
+                                                <li><a href="candidateinfo.html">information</a></li>
+                                                <li><a href="candidateregister.html">registration</a></li>
+                                            </ul>
+
+						</li>
+                                        <li><a href="#contact-section">Contact</a></li>					
+              
                                     </ul>
                                 </nav>
                             </div>
@@ -73,51 +87,8 @@
         </div>
     </div>
 
- <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <div class="footer_logo">
-                               
-                            </div><h3 class="footer_title">Online Voting</h3>
-                           
 
-                        </div>
-                    </div>
-                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Links</h3>
-                            <ul>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="vote.html">Vote</a></li>
-                                <li><a href="result.html">Result</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget"><br><br><br>
-                            <ul>
-                                <li><a href="candidateinfo.html">Candidate Info</a></li>
-                                <li><a href="work.html">How it works?</a></li>
-                                <li><a href="#f1">Features</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-        
-
-
-
-
-    
+  
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -137,6 +108,14 @@
     <script src="js/plugins.js"></script>
     <script src="js/gijgo.min.js"></script>
 
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
