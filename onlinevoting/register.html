@@ -13,7 +13,10 @@
     <!-- Main css -->
     <link rel="stylesheet" href="css/style1.css">
 </head>
-<body style="background-image: url(../onlinevoting/img/banner/banner.png)">
+<style>
+body{ background:#17b978;}
+</style>
+<body>
 
     <div class="main">
 
@@ -22,7 +25,7 @@
             <div class="container">
                 <div class="signup-content">
                     <form method="POST" id="signup-form" class="signup-form">
-                        <h2 class="form-title">Create account</h2>
+                        <h2 class="form-title"style="color:blue";>Create account</h2>
                         <div class="form-group">First Name:
                             <input type="text" class="form-input" name="firstname" id="name" placeholder="Your First Name" required/>
                         </div>
@@ -36,10 +39,7 @@
                             <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"required/>
                         </div>
 			<div class="form-group">Birth Date:
-                            <input type="date" class="form-input" name="date"  placeholder="Your Birth Date"required/>
-                        </div>
-			<div class="form-group">Age:
-                            <input type="number" class="form-input" name="age"  placeholder="Your Age" required/>
+                            <input type="date" class="form-input" name="date"required/>
                         </div>
 			<div class="form-group">VoterId No:
                             <input type="text" class="form-input" name="voterid" placeholder="Your VoterId" pattern="[X,J]{1}[S,F]{1}[K,P]{1}[0-9]{7}" required/>

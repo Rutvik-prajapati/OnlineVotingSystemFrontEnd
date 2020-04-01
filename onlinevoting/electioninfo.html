@@ -8,13 +8,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
    <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -29,13 +22,13 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 
 </head>
 
 <body>
-
+   
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -46,13 +39,13 @@
                             <div class="logo">
                                 <a href="index.html">
                                   <h3 style="color:white">Online Voting</h3>
-
+                               
                                 </a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">
-                               <nav>
+                                <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="index.html">home</a></li>
                                         <li><a href="vote.html">Vote</a></li>
@@ -66,7 +59,7 @@
 
 						</li>
                                         <li><a href="contact.html">Contact</a></li>					
-          
+              
                                     </ul>
                                 </nav>
                             </div>
@@ -80,35 +73,9 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Candidate Info</h3>
+                        <h3>Election Info</h3>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div><h1>hello</h1></div>
-
-    <div class="row  align-items-center">
-        <div class="col-xl-5 col-lg-5 col-md-6">
-            <div class="features_info2">
-                <h3 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s;">Realtime 
-                           Voting</h3>
-                <p class="wow fadeInUp" data-wow-duration=".6s" data-wow-delay=".4s" style="visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s;">You can Vote Your Favorite Candidate <br>
-                   Anytime (during voting timeline) and <br>
-                   Anywhere.</p>
-                     <div class="about_btn">
-                    <a class="boxed-btn4" href="vote.html">Vote Now</a>
-                </div>
-               
-            </div>
-         
-        </div>
-                                   
-    
-
-        <div class="col-xl-5 col-lg-5 offset-xl-1 offset-lg-1 col-md-6 ">
-            <div class="about_draw wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s;">
-                <img src="pic2.jfif" alt="">
             </div>
         </div>
     </div>
@@ -120,9 +87,9 @@
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <div class="footer_logo">
-
+                               
                             </div><h3 class="footer_title">Online Voting</h3>
-
+                           
 
                         </div>
                     </div>
@@ -148,39 +115,16 @@
                             </ul>
                         </div>
                     </div>
-
+                   
                 </div>
             </div>
         </div>
-
-        <script>
-                $(document).ready(function() {
-                    var token = window.localStorage;
-                       var authHeaders = {};
-                       authHeaders.Authorization = 'Bearer ' + token.accessToken;
-                    // $('#candidate').click(function () {
-                        $.ajax({
-                            url: "http://localhost:54546/api/Candidate/GetCandidateList",
-                            type: "GET",
-                            
-                            headers: authHeaders,
-                            dataType:"json",
-                            contentType: "application/html; charset=utf-8",
-                            success: function (response) {
-                                // $("#loginEmail").val("");
-                                // $("#loginPwd").val("");
-                                // $("#msg").text(response);
-                                alert(response.Data[0].CandidateElectionProvince);
-                            }
-                        });
-                    // });
-                });
-            </script>
+        
 
 
 
 
->>>>>>> 5d5005754df2fbf2ef2d190deac0f4720a5394a0
+    
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -208,6 +152,7 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
