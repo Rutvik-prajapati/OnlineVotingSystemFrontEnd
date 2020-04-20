@@ -8,10 +8,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 <style>
-.class1:hover{background-color:#22eaaa;border-radius:8px;font-color:white;}
+.class1{background:#fff;border-radius:8px; text-align: center;}
+.class1 a{color:#fff;}
+.class1:hover{background-color:#22eaaa;color:#fff;box-shadow: 0 5px 15px rgba(0,0,0,0.2);}
+
+.class1:hover p{color:#fff;font-size:18px;font-weight:bold;}
+.class1:hover h3{color:#fff;font-size:25px;transition:0.5s;}
+.class1:hover a{display:inline-block;padding:10px 20px;background:#fff;color:#000;border-radius:8px;transition:0.5s;font-weight:bold;}
+.class1 a:hover{color:blue;transition:0.5s;}
 img{border-radius:8px;}
 .a2:hover{background:#22eaaa;}
+.title{color:blue;font-size:20px;margin-top:30px;}
+.class1:hover .title{font-size:30px;transition:0.5s;}
 </style>
 
    <!-- CSS here -->
@@ -51,7 +61,7 @@ img{border-radius:8px;}
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.html">home</a></li>
+                                        <li><a class="active" href="#">home</a></li>
                                         <li><a href="vote.html">Vote</a></li>
                                         <li><a href="result.html">Result</a></li>
                                          <li><a href="electioninfo.html">Elections</a></li>
@@ -149,7 +159,7 @@ img{border-radius:8px;}
                     <div class="row  align-items-center">
                             <div class="col-xl-5 col-lg-5 offset-xl-1 offset-lg-1 col-md-6">
                                 <div class="about_image wow fadeInLeft" data-wow-duration=".4s" data-wow-delay=".3s">
-                                    <img src="pic3.jfif" alt="">
+                                    <img src="result.jpg" alt="">
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
@@ -184,24 +194,30 @@ img{border-radius:8px;}
             <div class="service_content_wrap">
                 <div class="row">
                     <div class="col-lg-4 col-md-4  wow fadeInUp">
-                        <div class="class1" style="padding:10px" class="single_service  wow fadeInUp">
-                            <span style="color:blue">01</span>
+                        <div class="class1" style="padding:10px" class="single_service  wow fadeInUp"><br>
+                            <span class="title">01</span>
                             <h3>Login</h3>
                             <p>New User can Sign up and verify account. Existing User can login using Username and password.</p>
+		<br><br><br>
+		<a href="login.html">Login Now</a><br>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4  wow fadeInUp">
-                        <div class="class1" style="padding:10px"class="single_service  wow fadeInUp">
-                            <span style="color:blue">02</span>
-                            <h3>Vote</h3>
-                            <p>Select election and vote your favorite candidate.<br><br></p>
+                        <div class="class1" style="padding:10px"class="single_service  wow fadeInUp"><br>
+                            <span class="title">02</span>
+                           <h3>Vote</h3>
+                            <p>After Successful Login You Can Select election and vote your favorite candidate.<br><br></p>
+		<br><br>
+		<a href="vote.html">Vote Now</a><br>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4  wow fadeInUp" >
-                        <div class="class1" style="padding:10px" class="single_service">
-                            <span style="color:blue">03</span>
+                        <div class="class1" style="padding:10px" class="single_service"><br>
+                            <span class="title">03</span>
                             <h3>Result</h3>
-                            <p>See Result after Time period is over.<br><br><br></p>
+                            <p>After Giving The Vote successfully You Can See Result after election Time period is over.<br><br><br></p>
+		<br>
+		<a href="result.html">See Result</a><br>
                         </div>
                     </div>
                 </div>
@@ -298,7 +314,7 @@ img{border-radius:8px;}
                                 <li><a href="candidateinfo.html">Candidate Info</a></li>
                                 <li><a href="#work">How it works?</a></li>
                                 <li><a href="#f1">Features</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#contact-section">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -337,6 +353,11 @@ img{border-radius:8px;}
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
+
+
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
 </body>
 
 </html>
