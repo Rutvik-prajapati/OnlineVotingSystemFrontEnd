@@ -131,14 +131,19 @@ h2 {
 .clear {
   clear: both; }
 
-body {
+body {background-image: url(../img/banner/bradcam.png);
+background-size: cover;
+    background-position: bottom;
+    padding: 214px 0;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+height:200px;
   font-size: 14px;
   line-height: 1.8;
   color: #222;
   font-weight: 400;
   font-family: 'Montserrat';
-  background-repeat: no-repeat;
-  background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -269,46 +274,9 @@ body {
   background-image: -ms-linear-gradient(to left, #74ebd5, #9face6);
   background-image: -o-linear-gradient(to left, #74ebd5, #9face6);
   background-image: -webkit-linear-gradient(to left, #74ebd5, #9face6);
-   background-image: linear-gradient(to left, #74ebd5, #9face6);  }
+   background-image: linear-gradient(to left, #74ebd5, #9face6);
+cursor:pointer;  }
 
-input[type=checkbox]:not(old) {
-  width: 2em;
-  margin: 0;
-  padding: 0;
-  font-size: 1em;
-  display: none; }
-
-input[type=checkbox]:not(old) + label {
-  display: inline-block;
-  margin-top: 7px;
-  margin-bottom: 25px; }
-
-input[type=checkbox]:not(old) + label > span {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  margin-right: 15px;
-  margin-bottom: 3px;
-  border: 1px solid #ebebeb;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  background: white;
-  background-image: -moz-linear-gradient(white, white);
-  background-image: -ms-linear-gradient(white, white);
-  background-image: -o-linear-gradient(white, white);
-  background-image: -webkit-linear-gradient(white, white);
-  background-image: linear-gradient(white, white);
-  vertical-align: bottom; }
-
-input[type=checkbox]:not(old):checked + label > span {
-  background-image: -moz-linear-gradient(white, white);
-  background-image: -ms-linear-gradient(white, white);
-  background-image: -o-linear-gradient(white, white);
-  background-image: -webkit-linear-gradient(white, white);
-  background-image: linear-gradient(white, white); }
 
 .label-agree-term {
   font-size: 12px;

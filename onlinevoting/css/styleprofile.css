@@ -1,0 +1,70 @@
+.bradcam1{
+background-image: url(../img/banner/bradcam.png);
+background-size: cover;
+    background-position: bottom;
+    padding: 214px 0;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+height:300px;}
+
+.containerprofile {border-radius: 10px;background:white;
+  padding: 50px 85px;
+  width:600px;
+  position: relative;
+  margin: 0 auto; 
+margin-bottom:20px;
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+.containerprofile h1{
+color: #1e90ff;}
+.box1 img{
+height:100px;
+width:100px;
+border-radius:50px;}
+
+.containerprofile input {
+border-bottom:1px solid blue;
+border-top:none;
+border-left:none;
+border-right:none;
+ width: auto;
+padding-left:0px;
+margin-bottom:10px;
+ }
+
+.containerprofile button{
+border:1px solid  #1e90ff;
+border-radius:10px;
+background:none;
+padding:10px;
+margin-top:20px;
+margin-left:110px;
+color: #1e90ff;
+font-weight:bold;
+cursor:pointer;
+}
+.containerprofile .box{
+display:flex;
+}
+.containerprofile .box2{
+margin-top:124px;
+padding-left:10px;}
+.box b{color:black;}
+
+@media only screen and (max-width: 660px) {
+  .containerprofile{
+  width:auto;
+margin-left:0px;
+margin-right:0px;
+overflow:hidden;
+margin-bottom:10px;
+  }
+.containerprofile button{
+margin-left:90px;
+}
+}
+
+
+
+
+

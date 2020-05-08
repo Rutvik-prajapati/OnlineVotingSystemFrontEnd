@@ -28,13 +28,14 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleall.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
 </head>
 <style>
-.a2:hover{background:#22eaaa;}
+.card{ background-image: url("card2.jpeg");}
 </style>
 <body>
 
@@ -56,23 +57,41 @@
                             <div class="main-menu  d-none d-lg-block">
                                <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.html">home</a></li>
+                                        <li><a href="index.html">home</a></li>
                                         <li><a href="vote.html">Vote</a></li>
                                         <li><a href="result.html">Result</a></li>
                                          <li><a href="electioninfo.html">Elections</a></li>
-                                          <li style="color:white">Candidates
+                                          <li class="active" style="color:white;font-size:15px;">Candidates
 						<ul class="submenu">
                                                 <div class="a2"><li><a href="candidateinfo.html">information</a></li></div>
                                                 <div class="a2"><li><a href="candidateregister.html">registration</a></li></div>
                                             </ul>
+			</li>
+			
+			 <li style="color:white;font-size:15px;">My Account
+						<ul class="submenu">
+                                                <div class="a2"><li><a href="profile.html">My Profile</a></li></div>
+                                                <div class="a2"><li><a href="#">Logout</a></li></div>
+                                            </ul>
+			</li>  
 
-						</li>
                                         <li><a href="contact.html">Contact</a></li>					
           
                                     </ul>
                                 </nav>
                             </div>
                         </div>
+<div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                             <a href="profile.html"><img style="width:40px;height:40px;border-radius:50px;margin-right:30px;"src="p1.png"></a>
+                            </div>
+                        </div>  
+
+ <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+</div></div></div>
+
 </header>
 
 
@@ -88,24 +107,78 @@
             </div>
         </div>
     </div>
-    <div><h1>hello</h1></div>
 
- <footer class="footer">
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Card 4</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+</div>
+
+ <!-- footer start -->
+    <footer class="footer">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <div class="footer_logo">
-
+                                
                             </div><h3 class="footer_title">Online Voting</h3>
-
+                           
 
                         </div>
+<div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
                     </div>
                     <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
                         <div class="footer_widget">
-                            <h3 class="footer_title">Links</h3>
+                            <h3 style="margin-top:20px; class="footer_title">Links</h3>
                             <ul>
                                 <li><a href="register.html">Register</a></li>
                                 <li><a href="login.html">Login</a></li>
@@ -119,18 +192,20 @@
                         <div class="footer_widget"><br><br><br>
                             <ul>
                                 <li><a href="candidateinfo.html">Candidate Info</a></li>
-                                <li><a href="index.html#work">How it works?</a></li>
-                                <li><a href="index.html#f1">Features</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#work">How it works?</a></li>
+                                <li><a href="#f1">Features</a></li>
+                                <li><a href="#contact-section">Contact</a></li>
                             </ul>
                         </div>
                     </div>
-
+                   
                 </div>
             </div>
         </div>
 
-        <script>
+        
+       
+<script>
                 $(document).ready(function() {
                     var token = window.localStorage;
                        var authHeaders = {};
@@ -154,10 +229,6 @@
                 });
             </script>
 
-
-
-
->>>>>>> 5d5005754df2fbf2ef2d190deac0f4720a5394a0
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -185,6 +256,7 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
-</body>
+        
 
+</body>
 </html>

@@ -9,20 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-<style>
-.class1{background:#fff;border-radius:8px; text-align: center;}
-.class1 a{color:#fff;}
-.class1:hover{background-color:#22eaaa;color:#fff;box-shadow: 0 5px 15px rgba(0,0,0,0.2);}
-
-.class1:hover p{color:#fff;font-size:18px;font-weight:bold;}
-.class1:hover h3{color:#fff;font-size:25px;transition:0.5s;}
-.class1:hover a{display:inline-block;padding:10px 20px;background:#fff;color:#000;border-radius:8px;transition:0.5s;font-weight:bold;}
-.class1 a:hover{color:blue;transition:0.5s;}
-img{border-radius:8px;}
-.a2:hover{background:#22eaaa;}
-.title{color:blue;font-size:20px;margin-top:30px;}
-.class1:hover .title{font-size:30px;transition:0.5s;}
-</style>
 
    <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -37,9 +23,11 @@ img{border-radius:8px;}
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleall.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
 </head>
+
 
 <body>
    
@@ -53,8 +41,7 @@ img{border-radius:8px;}
                             <div class="logo">
                                 <a href="index.html">
                                   <h3 style="color:white">Online Voting</h3>
-                                  
-                                </a>
+                                    </a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-7">
@@ -65,26 +52,50 @@ img{border-radius:8px;}
                                         <li><a href="vote.html">Vote</a></li>
                                         <li><a href="result.html">Result</a></li>
                                          <li><a href="electioninfo.html">Elections</a></li>
-                                          <li style="color:white">Candidates
+                                          <li style="color:white;font-size:15px;">Candidates
 						<ul class="submenu">
                                                 <div class="a2"><li><a href="candidateinfo.html">information</a></li></div>
                                                 <div class="a2"><li><a href="candidateregister.html">registration</a></li></div>
                                             </ul>
+			</li>
 
-						</li>
+	                                 <!-- After Login  -->
+
+
+				 <li style="color:white;font-size:15px;">My Account
+						<ul class="submenu">
+                                                <div class="a2"><li><a href="profile.html">My Profile</a></li></div>
+                                                <div class="a2"><li><a href="#">Logout</a></li></div>
+                                            </ul>
+			</li>  
+
+
+
+
+
                                         <li><a href="#contact-section">Contact</a></li>			
                                        
                                     </ul>
                                 </nav>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        </div>               	
+
+
+		<div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
+<!-- After Login  -->
+		
+                             <a href="profile.html"><img style="width:40px;height:40px;border-radius:50px;margin-right:30px;" src="p1.png"></a>
+<!-- before Login  -->
                                 <div class="book_btn d-none d-lg-block">
-                                    <a  href="register.html">Register</a>
+                                 <a href="register.html">Register</a>
                                 </div>
+
+
+
                             </div>
-                        </div>
+                        </div>       
+
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
@@ -149,7 +160,7 @@ img{border-radius:8px;}
                         
 
                             <div class="col-xl-5 col-lg-5 offset-xl-1 offset-lg-1 col-md-6 ">
-                                <div class="about_draw wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                                <div class="fpic" class="about_draw wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s">
                                     <img src="pic2.jfif" alt="">
                                 </div>
                             </div>
@@ -158,7 +169,7 @@ img{border-radius:8px;}
             <div class="features_main_wrap">
                     <div class="row  align-items-center">
                             <div class="col-xl-5 col-lg-5 offset-xl-1 offset-lg-1 col-md-6">
-                                <div class="about_image wow fadeInLeft" data-wow-duration=".4s" data-wow-delay=".3s">
+                                <div class="fpic" class="about_image wow fadeInLeft" data-wow-duration=".4s" data-wow-delay=".3s">
                                     <img src="result.jpg" alt="">
                                 </div>
                             </div>
@@ -194,30 +205,25 @@ img{border-radius:8px;}
             <div class="service_content_wrap">
                 <div class="row">
                     <div class="col-lg-4 col-md-4  wow fadeInUp">
-                        <div class="class1" style="padding:10px" class="single_service  wow fadeInUp"><br>
-                            <span class="title">01</span>
+                        <div class="class1" class="single_service  wow fadeInUp"><br>
+                            <span style="color: #1e90ff ;font-size:20px;">01</span>
                             <h3>Login</h3>
                             <p>New User can Sign up and verify account. Existing User can login using Username and password.</p>
 		<br><br><br>
-		<a href="login.html">Login Now</a><br>
-                        </div>
+		  </div>
                     </div>
                     <div class="col-lg-4 col-md-4  wow fadeInUp">
-                        <div class="class1" style="padding:10px"class="single_service  wow fadeInUp"><br>
-                            <span class="title">02</span>
+                        <div  class="class1" class="single_service  wow fadeInUp"><br>
+                            <span style="color: #1e90ff ;font-size:20px;">02</span>
                            <h3>Vote</h3>
                             <p>After Successful Login You Can Select election and vote your favorite candidate.<br><br></p>
-		<br><br>
-		<a href="vote.html">Vote Now</a><br>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4  wow fadeInUp" >
-                        <div class="class1" style="padding:10px" class="single_service"><br>
-                            <span class="title">03</span>
+                        <div  class="class1" class="single_service"><br>
+                            <span style="color: #1e90ff ;font-size:20px;">03</span>
                             <h3>Result</h3>
                             <p>After Giving The Vote successfully You Can See Result after election Time period is over.<br><br><br></p>
-		<br>
-		<a href="result.html">See Result</a><br>
                         </div>
                     </div>
                 </div>
@@ -225,8 +231,6 @@ img{border-radius:8px;}
         </div>
     </div>
     
-
-
 <section class="contact-section"id="contact-section">
             <div class="container">
                 <div class="d-none d-sm-block mb-5 pb-4">
@@ -295,10 +299,30 @@ img{border-radius:8px;}
                            
 
                         </div>
+<div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
                     </div>
                     <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
                         <div class="footer_widget">
-                            <h3 class="footer_title">Links</h3>
+                            <h3 style="margin-top:20px; class="footer_title">Links</h3>
                             <ul>
                                 <li><a href="register.html">Register</a></li>
                                 <li><a href="login.html">Login</a></li>

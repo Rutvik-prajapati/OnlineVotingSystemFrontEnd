@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!-- CSS here -->
+<link rel="stylesheet" href="css/styleprofile.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -21,14 +22,12 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/styleall.css">
+    <link rel="stylesheet" href="css/styleall.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
 
 
 </head>
-
-
 <body>
    
     <!-- header-start -->
@@ -40,19 +39,19 @@
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
                                 <a href="index.html">
-                                  <h3 style="color:white">Online Voting</h3>
+                                  <h3 style="color:white;">Online Voting</h3>
                                
                                 </a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">
-                                <nav>
+                               <nav>
                                     <ul id="navigation">
                                         <li><a href="index.html">home</a></li>
                                         <li><a href="vote.html">Vote</a></li>
                                         <li><a href="result.html">Result</a></li>
-                                         <li><a class="active" href="electioninfo.html">Elections</a></li>
+                                         <li><a href="electioninfo.html">Elections</a></li>
                                           <li style="color:white;font-size:15px;">Candidates
 						<ul class="submenu">
                                                 <div class="a2"><li><a href="candidateinfo.html">information</a></li></div>
@@ -60,107 +59,67 @@
                                             </ul>
 			</li>
 
-			 <li style="color:white;font-size:15px;">My Account
+			 <li class="active" style="color:white;font-size:15px;">My Account
 						<ul class="submenu">
                                                 <div class="a2"><li><a href="profile.html">My Profile</a></li></div>
                                                 <div class="a2"><li><a href="#">Logout</a></li></div>
                                             </ul>
 			</li>  
-
+			
                                         <li><a href="contact.html">Contact</a></li>					
               
                                     </ul>
                                 </nav>
                             </div>
+
+<div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
                         </div>
 <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                              <a href="profile.html"><img style="width:40px;height:40px;border-radius:50px;margin-right:30px;"src="p1.png"></a>
                             </div>
                         </div>  
- <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
 </header>
-
-
-    <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_1">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text">
-                        <h3>Election Info</h3>
-                    </div>
+   <div class="bradcam1">   
+<div class="containerprofile">
+                    <form method="POST" id="signup-form" class="signup-form" action="">
+		<h1>My Profile</h1>
+		<div class="box">
+		<div class="box1"><img src="p1.png">
+		<br>     <br>             
+       			<b>First Name:</b>
+                            <input type="text" name="firstname">
+                       	<br>
+			<b>Last Name:</b>
+                            <input type="text" name="middlename">
+                        	<br>
+			<b>SurName:</b>
+                            <input type="text" name="surname">
+                       	<br>
+                        		<b>Email:</b>
+                            <input type="email" name="email">
+                   	<br></div>
+		<div class="box2"><b>Birth Date:</b>
+                            <input type="text" name="date">
+                        	<br>
+			<b>VoterId No:</b>
+                            <input type="text"name="voterid">
+                        	<br>
+			<b>Username:</b>
+                            <input type="text"  name="username">
+                     	 <br>
+			<b>Password:</b>
+                            <input type="password"name="password">
+          		<br> 
+		  <a href="#"><button>Update</button></a></div>                       
+                      </div>
+                    </form>
                 </div>
-            </div>
-        </div>
-    </div>
+   
+ </div>
 
-
-
-
- <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Online Voting</h3>
-                                   </div>
-<div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-twitter-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                    </div>
-                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 style="margin-top:20px;"class="footer_title">Links</h3>
-                            <ul>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="vote.html">Vote</a></li>
-                                <li><a href="result.html">Result</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget"><br><br><br>
-                            <ul>
-                                <li><a href="candidateinfo.html">Candidate Info</a></li>
-                                <li><a href="index.html#work">How it works?</a></li>
-                                <li><a href="index.html#f1">Features</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-        
-
-
-
-
-    
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -188,7 +147,6 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
-
 </body>
 
 </html>
