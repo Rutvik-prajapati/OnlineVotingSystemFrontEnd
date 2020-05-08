@@ -1,12 +1,13 @@
 .active{
 border-bottom:1px solid white;}
 li{cursor:pointer;}
-li:hover{text-shadow: 2px 2px#FF0000;}
+li:hover{text-shadow: 2px 2px black;}
 .a2 li{text-shadow:none;}
 .class1{text-align: center;}
-.submenu{border-radius:15px;}
+.class1 p,h3{color:black;}
+.submenu{border-radius:8px;}
 .submenu a{text-align: center;}
-.a2:hover{background: #f2f2f2;border-radius:15px;}
+.a2:hover{background: #f2f2f2;border-radius:8px;}
 .fpic img{
 width:100%;height:100%;
 border-radius:15px;}

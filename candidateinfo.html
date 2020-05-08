@@ -74,43 +74,12 @@
 
 </head>
 <style>
-<<<<<<< HEAD
-.a2:hover{background:#22eaaa;}
 
-.cards {
-    margin: -1rem;
-}
-
-/* 220px */
-.card {
-    width: 400px;   
-    float: left;
-    margin: 1rem;
-    border: 1px solid #d3d3d3;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: white;
-}
-
-@supports (display: grid) {
-    .cards {
-        margin: 0;
-    }
-
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-gap: 1rem;
-    }
-
-}
-
-#selectoption {
-    text-align: center;
-}
-=======
 .card{ background-image: url("card2.jpeg");}
->>>>>>> 674dd618e3131c61dd3558aa6d0e8c8d0c0ea979
+
+#secection{text-align:center;}
+
+
 </style>
 <body>
 
@@ -150,7 +119,7 @@
                                             </ul>
 			</li>  
 
-                                        <li><a href="contact.html">Contact</a></li>					
+                                        <li><a href="index.html#contact-section">Contact</a></li>					
           
                                     </ul>
                                 </nav>
@@ -187,17 +156,17 @@
          <option value="Select">Select</option>
     </div> -->
     <div id="selectoption">Election Name:
-        <select class="form-input" id="ddlelection" style="width: 200px;"> 
-    </select>
-        <!-- <option value="select">select</option> -->
+        <select class="form-input" style="width: 200px;"> 
+    
+      <option value="select">select</option> 
+	</select>
     </div>
-<<<<<<< HEAD
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <main class="cards">
         <div id="test12"></div>
     </main>
-=======
->>>>>>> 674dd618e3131c61dd3558aa6d0e8c8d0c0ea979
+
 
 <div class="row">
   <div class="column">
@@ -233,19 +202,14 @@
   </div>
 </div>
 
- <!-- footer start -->
-    <footer class="footer">
+ <footer class="footer">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
-                            <div class="footer_logo">
-                                
-                            </div><h3 class="footer_title">Online Voting</h3>
-                           
-
-                        </div>
+                            <h3 class="footer_title">Online Voting</h3>
+                                   </div>
 <div class="socail_links">
                                 <ul>
                                     <li>
@@ -269,7 +233,7 @@
                     </div>
                     <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
                         <div class="footer_widget">
-                            <h3 style="margin-top:20px; class="footer_title">Links</h3>
+                            <h3 style="margin-top:20px;"class="footer_title">Links</h3>
                             <ul>
                                 <li><a href="register.html">Register</a></li>
                                 <li><a href="login.html">Login</a></li>
@@ -280,12 +244,12 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget"><br><br><br>
+                        <div class="footer_widget"><br><br><br><br>
                             <ul>
                                 <li><a href="candidateinfo.html">Candidate Info</a></li>
-                                <li><a href="#work">How it works?</a></li>
-                                <li><a href="#f1">Features</a></li>
-                                <li><a href="#contact-section">Contact</a></li>
+                                <li><a href="index.html#work">How it works?</a></li>
+                                <li><a href="index.html#f1">Features</a></li>
+                                <li><a href="index.html#contact-section">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -293,15 +257,11 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    
-        <script>
-=======
-
         
+
        
 <script>
->>>>>>> 674dd618e3131c61dd3558aa6d0e8c8d0c0ea979
+
                 $(document).ready(function() {
                     // localStorage.removeItem('accessToken');
                     var accesstoken = sessionStorage.getItem('accessToken');
@@ -373,47 +333,13 @@
                  });
             </script>
 
-<<<<<<< HEAD
 
 
 
-<!-- >>>>>>> 5d5005754df2fbf2ef2d190deac0f4720a5394a0 -->
-<!-- <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-=======
-<script src="js/vendor/modernizr-3.5.0.min.js"></script>
->>>>>>> 674dd618e3131c61dd3558aa6d0e8c8d0c0ea979
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script> -->
 
-    <!--contact js-->
-    <!-- <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-
-<<<<<<< HEAD
-    <script src="js/main.js"></script>  -->
 </body>
-=======
-    <script src="js/main.js"></script>
-        
->>>>>>> 674dd618e3131c61dd3558aa6d0e8c8d0c0ea979
+      
+
 
 </body>
 </html>
