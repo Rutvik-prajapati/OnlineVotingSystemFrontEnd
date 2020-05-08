@@ -49,7 +49,8 @@ body{ background:linear-gradient(#581b98 50%, white 50%);}
 <script src="./js/vendor/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-          $('#submit').click(function () {
+          $('#submit').click(function (e) {
+            e.preventDefault();
             generateToken();
           })
 
@@ -61,53 +62,54 @@ body{ background:linear-gradient(#581b98 50%, white 50%);}
                 username: $('#name').val(),
                 password: $('#password').val()
             };
-            // if (Username == '' || Password == '') {
-            //                 if (Username == '') {
-            //                     $(".validation3").remove();
-            //                     $("#name").after("<div class='validation3' style='color:red;margin-bottom: 0px;'>Please enter your username</div>");
-            //                 }
-            //                 if (Password == '') {
-            //                     $(".validation4").remove();
-            //                     $("#password").after("<div class='validation4' style='color:red;margin-bottom: 0px;'>Please enter your password</div>");
-            //                 }
-            //             }
-            //             else {
-            $.ajax({
-                url: "http://localhost:54546/token",
-                method: "POST",
-                 contentType: "application/x-www-form-urlencoded;charset=urf-8",
-                // contentType:'application/json',
-                data:loginData,
-                // dataType:"json",
-                
-                
-                success: function (resp) {
-                    // console.log(resp);
-                      // localStorage.setItem('userName', resp.userName);
-                      localStorage.setItem('accessToken', resp.access_token);
-                    //    var authHeaders = {};
-                    //    authHeaders.Authorization = 'Bearer ' + resp.access_token;
-                    //    location.replace("index.html"); 
-                    window.location.href = "index.html";   
-                    // alert("successfully worked.."+resp.access_token); 
-                },
-                // failure: function (response) {
-                //         alert(response.responseText);
-                // },
-                error: function(msg){
-                    console.log(msg);
-                    alert(msg);
-                    // console.log(jqXHR);
-                    // console.log(jqXHR.status);
-                    //     alert(jqXHR.error+" : "+status+" : "+err);
-                },
-                    
-                    // complete: function(data) {
-                    // alert('This request took '+(new Date().getTime() - this.start_time)+' ms');
-                    // }
-            });
+            if (loginData.username == '' || loginData.password == '') {
+                            if (loginData.username == '') {
+                                $(".validation3").remove();
+                                $("#name").after("<div class='validation3' style='color:red;margin-bottom: 0px;'>Please enter your username</div>");
+                            }
+                            if (loginData.password == '') {
+                                $(".validation4").remove();
+                                $("#password").after("<div class='validation4' style='color:red;margin-bottom: 0px;'>Please enter your password</div>");
+                            }
+            }
+            else {                           
+                            $.ajax({
+                                url: "http://localhost:54546/token",
+                                method: "POST",
+                                contentType: "application/x-www-form-urlencoded;charset=urf-8",
+                                // contentType:'application/json',
+                                data:loginData,
+                                // dataType:"json",
+                                
+                                
+                                success: function (resp) {
+                                    // console.log(resp);
+                                    sessionStorage.setItem('userName', loginData.username);
+                                    sessionStorage.setItem('accessToken', resp.access_token);
+                                    //    var authHeaders = {};
+                                    //    authHeaders.Authorization = 'Bearer ' + resp.access_token;
+                                    //    location.replace("index.html"); 
+                                    window.location.href = "index.html";   
+                                    // alert("successfully worked.."+resp.access_token); 
+                                },
+                                // failure: function (response) {
+                                //         alert(response.responseText);
+                                // },
+                                error: function(msg){
+                                    // console.log(msg);
+                                    // alert(msg.responseText);
+                                    alert("invalid username or password.");
+                                    // console.log(jqXHR);
+                                    // console.log(jqXHR.status);
+                                    //     alert(jqXHR.error+" : "+status+" : "+err);
+                                },
+                                    
+                                    // complete: function(data) {
+                                    // alert('This request took '+(new Date().getTime() - this.start_time)+' ms');
+                                    // }
+                            });
             
-                        // }
+            }
         }
     });
 </script>     

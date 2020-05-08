@@ -11,11 +11,11 @@
 
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-   <!-- CSS here -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" />
+    
+  
+  <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -29,12 +29,83 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <script src="./js/vendor/jquery-3.3.1.min.js"></script>
+  
 
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+    <!--contact js-->
+     <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script> 
+    
+  
+  
 
 </head>
 <style>
 .a2:hover{background:#22eaaa;}
+
+.cards {
+    margin: -1rem;
+}
+
+/* 220px */
+.card {
+    width: 400px;   
+    float: left;
+    margin: 1rem;
+    border: 1px solid #d3d3d3;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+@supports (display: grid) {
+    .cards {
+        margin: 0;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1rem;
+    }
+
+}
+
+#selectoption {
+    text-align: center;
+}
 </style>
 <body>
 
@@ -87,8 +158,20 @@
                 </div>
             </div>
         </div>
+    </div> 
+    <!-- <div  class="form-group">Election Name:
+        <select  class="form-input" id="ddlelection" required>
+         <option value="Select">Select</option>
+    </div> -->
+    <div id="selectoption">Election Name:
+        <select class="form-input" id="ddlelection" style="width: 200px;"> 
+    </select>
+        <!-- <option value="select">select</option> -->
     </div>
-    <div><h1>hello</h1></div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <main class="cards">
+        <div id="test12"></div>
+    </main>
 
  <footer class="footer">
         <div class="footer_top">
@@ -129,36 +212,84 @@
                 </div>
             </div>
         </div>
-
+    
         <script>
                 $(document).ready(function() {
-                    var token = window.localStorage;
+                    // localStorage.removeItem('accessToken');
+                    var accesstoken = sessionStorage.getItem('accessToken');
+                    if(accesstoken == null)
+                    {
+                        window.location.href="login.html";
+                    }
+                    var token = window.sessionStorage;
                        var authHeaders = {};
                        authHeaders.Authorization = 'Bearer ' + token.accessToken;
                     // $('#candidate').click(function () {
-                        $.ajax({
+    
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "http://localhost:54546/api/Election/ListOfElectionAndElectorIdAndName",
+                data: "{}",
+                dataType: "json",
+            success: function (Result) {
+                $("#ddlelection").append($("<option></option>").val('select').attr('electionid','select').html('select'));
+                
+                $.each(Result.Data.ElectionIdAndName, function (key, value) {
+                    // console.log(key+ ":" +value.ElectionName);
+                     $("#ddlelection").append($("<option></option>").val(value.ElectionName).attr('electionid',+value.ElectionId).html(value.ElectionName));
+                    //  $('#ddlelection option').attr('electionid',+value.ElectionId);
+                });
+                $("#ddlelection").chosen();
+                // var electionid = $("#ddlelection option:selected").attr("electionid");
+                // if(electionid != '' && electionid != 'select')
+                // {
+                //     displaycandidatelist();
+                // }
+                $("#ddlelection").change(function() {
+                    displaycandidatelist();
+                });
+                function displaycandidatelist()
+                {
+                            $.ajax({
                             url: "http://localhost:54546/api/Candidate/GetCandidateList",
-                            type: "GET",
-                            
+                            type: "GET",                            
                             headers: authHeaders,
                             dataType:"json",
                             contentType: "application/html; charset=utf-8",
                             success: function (response) {
-                                // $("#loginEmail").val("");
-                                // $("#loginPwd").val("");
-                                // $("#msg").text(response);
-                                alert(response.Data[0].CandidateElectionProvince);
+                                var electionid = $("#ddlelection option:selected").attr("electionid");
+                                $(".card").remove();
+                                $.each(response.Data, function (i) {
+                                    
+                                    if(response.Data[i].ElectionId == electionid)
+                                    {
+                                   // $("#ddlelection").append($("<option></option>").val(response.Data[i].ElectionName).attr('electionid',"select").html(response.Data[i].ElectionName));
+                                    var templateString = '<article class="card"><h2>' + response.Data[i].FullName + '</h2><p> Party Name : ' + response.Data[i].PoliticalPartyName + '</p><p> Province : ' + response.Data[i].CandidateElectionProvince + '</p><button id="tes">Start</button></article>';
+                                    $('#test12').append(templateString);
+                                    }
+                                })
+
+                                $("#test12").on("click", function () {
+                                    alert("test");
+                                });
+                                //alert(response.Data[0].CandidateElectionProvince);
                             }
                         });
                     // });
-                });
+                }
+            }
+            });
+
+                
+                 });
             </script>
 
 
 
 
->>>>>>> 5d5005754df2fbf2ef2d190deac0f4720a5394a0
-<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<!-- >>>>>>> 5d5005754df2fbf2ef2d190deac0f4720a5394a0 -->
+<!-- <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -175,16 +306,16 @@
     <script src="js/jquery.slicknav.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script>
+    <script src="js/gijgo.min.js"></script> -->
 
     <!--contact js-->
-    <script src="js/contact.js"></script>
+    <!-- <script src="js/contact.js"></script>
     <script src="js/jquery.ajaxchimp.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/mail-script.js"></script>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script>  -->
 </body>
 
 </html>
