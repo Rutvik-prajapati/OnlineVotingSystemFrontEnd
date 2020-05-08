@@ -32,7 +32,7 @@
   				</select></div>
 				<div class="form-group">Your Username/Electorname:
 				<select class="form-input" id="ddlelector" required>
-				 <option value="Select">Select</option>
+				    <!-- <option value="Select">Select</option> -->
  				 <!-- <option value="A">A</option>
  				 <option value="B">B</option> -->
   				</select></div>
@@ -44,9 +44,9 @@
 			<div class="form-group">Party Name(optional):
                             <input type="text" class="form-input" name="pname" id="partyname" placeholder="Your Party Name"/>
                         </div>
-			<div class="form-group">Election Symbol(optional):
+			<!-- <div class="form-group">Election Symbol(optional):
                             <input type="file" class="form-input" name="symbol"/>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
                         </div>
@@ -59,7 +59,7 @@
     </div>
 
     <script src="./js/vendor/jquery-3.3.1.min.js"></script>
-    <script >
+    <script>
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
@@ -74,18 +74,24 @@
                     //  $('#ddlelection option').attr('electionid',+value.ElectionId);
                 });
                 
-                $.each(Result.Data.ElectorIdAndName, function (key, value) {
-                    // console.log(key+ ":" +value.ElectorName);
-                     $("#ddlelector").append($("<option></option>").val(value.ElectorName).attr('electorid',+value.ElectorId).html(value.ElectorName));
-                });
+                 $.each(Result.Data.ElectorIdAndName, function (key, value) {
+                //      console.log(key+ ":" +value.ElectorName);
+                 var username = sessionStorage.getItem('userName');
+                 if(username==value.ElectorName)
+                 {
+                      $("#ddlelector").append($("<option></option>").val(value.ElectorName).attr('electorid',+value.ElectorId).html(value.ElectorName)); //
+                 }
+                 });
 
-                 $("#submit").click(function () {
+                 $("#submit").click(function (e) {
+                    e.preventDefault();
                     var selectedElectionId = $("#ddlelection option:selected").attr("electionid");
                     var selectedElectorId = $("#ddlelector option:selected").attr("electorid");
                     var CandidateElectionProvince = $("#electionprovince").val();
                     var PoliticalPartyName = $("#partyname").val();
                     // var CandidateElectionSymbol = null
-                    var datastring = {'ElectorId':+selectedElectorId,'ElectionId':+selectedElectionId,'CandidateElectionProvince':+CandidateElectionProvince,'PoliticalPartyName':+PoliticalPartyName}
+                    //datastring.CandidateElectionProvince = datastring.CandidateElectionProvince.toString();
+                    var datastring = {'ElectorId':selectedElectorId,'ElectionId':selectedElectionId,'CandidateElectionProvince':CandidateElectionProvince,'PoliticalPartyName':PoliticalPartyName}
                     
                     if($('#ddlelection').val() == 'Select' || $('#ddlelector').val() == 'Select' || CandidateElectionProvince == '')
                     {
@@ -106,6 +112,7 @@
                         $.ajax({
                                 type: "POST",
                                 url: 'http://localhost:54546/api/Candidate/CandidateRegister',
+                                // url: '@Url.Action("CandidateRegister", "Candidate")',
                                 dataType: "json",
                                 data: JSON.stringify(datastring),
                                 //cache: false,
@@ -118,20 +125,24 @@
                                         alert(result.Message);
                                         window.location.href = "candidateinfo.html";   
                                     }
-                                    else if (result.Data == false)
+                                    if (result.Data == false)
                                     {
                                         // $('#myModal').modal("hide");
                                         // toastr.error(result.responseText, 'Fail');
                                         alert(result.Message);
                                         window.location.href = "candidateregister.html";
                                     }
-                                    else {
-                                        alert("Something went wrong");                                       
-                                    }
+                                    // else {
+                                    //     alert("Something went wrong");                                       
+                                    // }
                                 },
                                 error: function (xhr) {
-                                    alert("error");
-                                }
+                                    alert(xhr.responseText);
+                                    alert(xhr.statusText);
+                                },
+                                // complete: function(response, textStatus) {
+                                // return alert("Hey: " + textStatus);
+                                // }
                         });
 
                     }

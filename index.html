@@ -118,7 +118,7 @@
                                 Plateform</h3>
                             <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">Vote Anytime  Any Where<sup>*</sup></p>
                             <div class="video_service_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
-                                <a href="login.html" class="boxed-btn3">Login</a>
+                                <a href="login.html" class="boxed-btn3" id="login">Login</a>
                             </div>
                         </div>
                     </div>
@@ -347,7 +347,31 @@
             </div>
         </div>
         
-        
+        <script src="./js/vendor/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var accesstoken = sessionStorage.getItem('accessToken');
+            if(accesstoken != null)
+            {
+                // $("#login").append($("<option></option>").val(value.ElectionName).attr('electionid',+value.ElectionId).html(value.ElectionName));
+                $("#login").text("Logout");
+                $("#login").removeAttr("href");
+               // $('#login').attr("id", "logout");
+            }
+            else{
+                $("#login").text("Login");
+            }
+
+            $("#login").click(function(){
+                if($("#login").text()=='Logout')
+                {
+                    sessionStorage.clear();
+                    
+                    location.reload(true);
+                }
+            });
+        })
+    </script>
      
 		
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
