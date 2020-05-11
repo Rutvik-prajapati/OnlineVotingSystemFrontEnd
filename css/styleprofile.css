@@ -10,7 +10,7 @@ height:300px;}
 
 .containerprofile {border-radius: 10px;background:white;
   padding: 50px 85px;
-  width:600px;
+  width:50%;
   position: relative;
   margin: 0 auto; 
 margin-bottom:20px;
@@ -27,41 +27,50 @@ border-bottom:1px solid blue;
 border-top:none;
 border-left:none;
 border-right:none;
- width: auto;
-padding-left:0px;
+ width: 80%;
 margin-bottom:10px;
  }
 
-.containerprofile button{
+#updatebtn button{
 border:1px solid  #1e90ff;
-border-radius:10px;
+border-radius:8px;
+box-shadow:2px 2px #1e90ff;
 background:none;
 padding:10px;
 margin-top:20px;
-margin-left:110px;
+margin-left:55%;
 color: #1e90ff;
-font-weight:bold;
 cursor:pointer;
 }
-.containerprofile .box{
+.containerprofile .box{width:100%;
 display:flex;
 }
-.containerprofile .box2{
-margin-top:124px;
-padding-left:10px;}
+.containerprofile .box1{width:70%;}
+.containerprofile .box2{width:70%;
+margin-top:124px;}
 .box b{color:black;}
+#deletecandidateform button{border:1px solid  red;
+border-radius:8px;
+box-shadow:2px 2px red;
+background:none;
+padding:10px;
+color:red;
+cursor:pointer;}
 
-@media only screen and (max-width: 660px) {
+
+@media only screen and (max-width: 1000px) {
   .containerprofile{
-  width:auto;
-margin-left:0px;
-margin-right:0px;
-overflow:hidden;
-margin-bottom:10px;
+  width:90%;
+margin-left:5%;
+margin-bottom:5%;
   }
-.containerprofile button{
-margin-left:90px;
-}
+.containerprofile input {
+ width: 100%;
+ }
+.containerprofile .box1{width:50%;}
+.containerprofile .box2{padding-left:10px;width:50%;}
+#updatebtn button,#deletecandidateform button{font-size:15px;}
+#deletecandidateform{margin-top:10px;}
 }
 
 

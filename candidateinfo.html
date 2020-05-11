@@ -75,7 +75,6 @@
 </head>
 <style>
 .card{ background-image: url("card2.jpeg");}
-/* #secection{text-align:center;} */
 .a2:hover{background:#22eaaa;}
 
 .cards {
@@ -93,6 +92,7 @@
     background-color: white;
 }
 
+.candidatesection{margin-bottom:20px;}
 @supports (display: grid) {
     .cards {
         margin: 0;
@@ -120,7 +120,7 @@
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
                                 <a href="index.html">
-                                  <h3 style="color:white">Online Voting</h3>
+                                  <h3 style="color:white;">Online Voting</h3>
 
                                 </a>
                             </div>
@@ -179,6 +179,7 @@
             </div>
         </div>
     </div> 
+<div class="candidatesection">
     <div id="selectoption"><b style="color: black;">Election Name:</b>
         <select class="form-input" id="ddlelection" style="width: 200px;"> 
             <!-- <option value="select">select1</option> -->
@@ -187,7 +188,7 @@
     <main class="cards">
         <div id="test12"></div>
     </main>
-
+</div>
 
 <!-- <div class="row">
   <div class="column">
@@ -277,7 +278,7 @@
             </div>
         </div>
     </footer>    
-    
+      
     <script>
                 $(document).ready(function() {
                     // localStorage.removeItem('accessToken');
