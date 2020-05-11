@@ -62,7 +62,7 @@
 			 <li class="active" style="color:white;font-size:15px;">My Account
 						<ul class="submenu">
                                                 <div class="a2"><li><a href="profile.html">My Profile</a></li></div>
-                                                <div class="a2"><li><a href="#">Logout</a></li></div>
+                                                <div class="a2"><li><a href="#" id="logout">Logout</a></li></div>
                                             </ul>
 			</li>  
 			
@@ -84,41 +84,190 @@
 </header>
    <div class="bradcam1">   
 <div class="containerprofile">
-                    <form method="POST" id="signup-form" class="signup-form" action="">
+                    <form onsubmit="event.preventDefault();" id="signup-form" class="signup-form" autocomplete="off" action="">
 		<h1>My Profile</h1>
 		<div class="box">
 		<div class="box1"><img src="p1.png">
 		<br>     <br>             
        			<b>First Name:</b>
-                            <input type="text" name="firstname">
+                            <input type="text" name="firstname" id="firstname">
                        	<br>
-			<b>Last Name:</b>
-                            <input type="text" name="middlename">
+			<b>Middle Name:</b>
+                            <input type="text" name="middlename" id="middlename">
                         	<br>
 			<b>SurName:</b>
-                            <input type="text" name="surname">
+                            <input type="text" name="surname" id="surname">
                        	<br>
                         		<b>Email:</b>
-                            <input type="email" name="email">
+                            <input type="email" name="email" id="email">
                    	<br></div>
-		<div class="box2"><b>Birth Date:</b>
-                            <input type="text" name="date">
+		<div class="box2">
+            <!-- <b>Birth Date:</b>
+                            <input type="date" name="date" id="dob" > -->
                         	<br>
 			<b>VoterId No:</b>
-                            <input type="text"name="voterid">
+                            <input type="text"name="voterid" id="voteridno">
                         	<br>
 			<b>Username:</b>
-                            <input type="text"  name="username">
+                            <input type="text"  name="username" id="username">
                      	 <br>
-			<b>Password:</b>
-                            <input type="password"name="password">
+			<!-- <b>Password:</b>
+                            <input type="password"name="password"> -->
           		<br> 
-		  <a href="#"><button>Update</button></a></div>                       
+          <a href="#" id="updatebtn"><button>Update</button></a></div>  
+                               
                       </div>
+                      <br>
+          <div id="deletecandidateform"><h3>Withdraw your candidate form </h3><a href="#" id="deletebtn"><button>Withdraw</button></a></div>
                     </form>
                 </div>
    
  </div>
+
+ 
+
+ <script src="./js/vendor/jquery-3.3.1.min.js"></script>
+ <script>
+     $(document).ready(function() {
+                    var accesstoken = sessionStorage.getItem('accessToken');
+                    if(accesstoken == null)
+                    {
+                        window.location.href="login.html";
+                    }
+                    var token = window.sessionStorage;
+                       var authHeaders = {};
+                       authHeaders.Authorization = 'Bearer ' + token.accessToken;
+    
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "http://localhost:54546/api/Account/RetrieveProfileData",
+                        headers: authHeaders,
+                        data: "{}",
+                        dataType: "json",
+                        success: function (Result) {
+                            // $('#firstname').append(Result.Data.FirstName);
+                             $('#firstname').val(Result.Data.FirstName);
+                             $('#middlename').val(Result.Data.MiddleName);
+                             $('#surname').val(Result.Data.LastName);
+                            //  $('#email').val(Result.Data.FirstName);
+                            // var date = Result.Data.DOB;                            
+                            // var d=new Date(date.split("/").reverse().join("-"));
+                            // // alert(d);
+                            // var dd=d.getDate();
+                            // // alert("date" +dd);
+                            // var mm=d.getMonth()+1;
+                            // // alert("month" +mm);
+                            // var yy=d.getFullYear();
+                            // var ddate = dd+"-"+mm+"-"+yy;
+                            // var d1=parseInt(ddate);
+                            // var m1=parseInt(mm);
+                            // var y1=parseInt(yy);
+                            // // alert("year" +yy);
+                            // // alert(dd+"/"+mm+"/"+yy);
+                            // // console.log(date);
+                            // //  $('#dob').val(d);
+                            // //  $('#dob').attr("value","12-6-1999");
+                            // $("#dob").attr("value", d1+"-"+m1+"-"+y1);
+                             $('#voteridno').val(Result.Data.VoterId);
+                             $('#username').val(Result.Data.ElectorName);
+                             if(Result.Data.candidateExist!=true)
+                             {
+                                 $("#deletecandidateform").remove();
+                             }
+                             $("#deletebtn").click(function(){
+                                var con = confirm("Are you sure you want to Withdraw this ")
+                                if(con)
+                                {
+                                    $.ajax({
+                                        type: "POST",
+                                        contentType: "application/json; charset=utf-8",
+                                        url: "http://localhost:54546/api/Candidate/DeleteCandidate",
+                                        headers: authHeaders,
+                                        data: "{}",
+                                        dataType: "json",
+                                        success: function (Result) {
+                                            if (Result.Data==true) {
+                                                alert(Result.Message);                   
+                                                location.reload(true);
+                                            }
+                                            else{
+                                                alert("error");
+                                            }
+                                        }
+                                    });
+                                }
+                             });
+
+                             $("#updatebtn").click(function(){
+                                var FirstName=$("#firstname").val();
+                                var MiddleName=$("#middlename").val();
+                                var LastName=$("#surname").val();
+                                var ElectorName=$("#username").val()
+                                // var Password=$("#password").val();
+                                // var Type=2;
+                                // var DOB=$("#dob").val();
+                                var VoterId=$("#voteridno").val();
+
+                                var datastring= {'FirstName':FirstName,'MiddleName':MiddleName,'LastName':LastName,'ElectorName':ElectorName, 'VoterId':VoterId};
+                                if(FirstName == ''|| MiddleName == '' || LastName == '' || ElectorName == '' || VoterId == '') 
+                                {
+                                    if (FirstName == '') {
+                                        $(".validation2").remove();
+                                        $("#firstname").after("<div class='validation2' style='color:red;margin-bottom: 0px;'>Please enter your firstname</div>");
+                                    }
+                                    if (MiddleName == '') {
+                                        $(".validation3").remove();
+                                        $("#middlename").after("<div class='validation3' style='color:red;margin-bottom: 0px;'>Please enter your middlename</div>");
+                                    }
+                                    if (LastName == '') {
+                                        $(".validation4").remove();
+                                        $("#surname").after("<div class='validation4' style='color:red;margin-bottom: 0px;'>Please enter your lastname/surname</div>");
+                                    }
+                                    if (ElectorName == '') {
+                                        $(".validation5").remove();
+                                        $("#username").after("<div class='validation5' style='color:red;margin-bottom: 0px;'>Please enter your username</div>");
+                                    }
+                                    // if (Password == '') {
+                                    //     $(".validation6").remove();
+                                    //     $("#password").after("<div class='validation6' style='color:red;margin-bottom: 0px;'>Please enter your password</div>");
+                                    // }
+                                    // if (DOB == '') {
+                                    //     $(".validation7").remove();
+                                    //     $("#dob").after("<div class='validation7' style='color:red;margin-bottom: 0px;'>Please enter your date of birth</div>");
+                                    // }
+                                    if (VoterId == '') {
+                                        $(".validation8").remove();
+                                        $("#voteridno").after("<div class='validation8' style='color:red;margin-bottom: 0px;'>Please enter your voterid</div>");
+                                    }
+                                }
+                                else{   
+                                    $.ajax({
+                                        type: "POST",
+                                        contentType: "application/json; charset=utf-8",
+                                        url: "http://localhost:54546/api/Account/SaveProfile",
+                                        headers: authHeaders,
+                                        data: JSON.stringify(datastring),
+                                        dataType: "json",
+                                        success: function (Result) {
+                                            // alert(Result.Data);
+                                            alert(Result.Message);
+                                            location.reload(true);
+                                        }
+                                    });
+                                }
+                             });
+                        }
+                    });
+                    $("#logout").click(function(){
+                    if($("#logout").text()=='Logout')
+                    {
+                        sessionStorage.clear();
+                        location.reload(true);
+                    }
+                });
+    });
+ </script>
 
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>

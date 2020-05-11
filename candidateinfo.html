@@ -74,15 +74,43 @@
 
 </head>
 <style>
-
 .card{ background-image: url("card2.jpeg");}
+/* #secection{text-align:center;} */
+.a2:hover{background:#22eaaa;}
 
-#secection{text-align:center;}
+.cards {
+    margin: -1rem;
+}
 
+/* 220px */
+.card {
+    width: 400px;   
+    float: left;
+    margin: 1rem;
+    border: 1px solid #d3d3d3;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
 
+@supports (display: grid) {
+    .cards {
+        margin: 0;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1rem;
+    }
+
+}
+
+#selectoption {
+    text-align: center;
+}
 </style>
 <body>
-
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -104,20 +132,20 @@
                                         <li><a href="index.html">home</a></li>
                                         <li><a href="vote.html">Vote</a></li>
                                         <li><a href="result.html">Result</a></li>
-                                         <li><a href="electioninfo.html">Elections</a></li>
-                                          <li class="active" style="color:white;font-size:15px;">Candidates
-						<ul class="submenu">
+                                        <li><a href="electioninfo.html">Elections</a></li>
+                                        <li class="active" style="color:white;font-size:15px;">Candidates
+						                    <ul class="submenu">
                                                 <div class="a2"><li><a href="candidateinfo.html">information</a></li></div>
                                                 <div class="a2"><li><a href="candidateregister.html">registration</a></li></div>
                                             </ul>
-			</li>
+			                            </li>
 			
-			 <li style="color:white;font-size:15px;">My Account
-						<ul class="submenu">
+			                            <li style="color:white;font-size:15px;">My Account
+						                    <ul class="submenu">
                                                 <div class="a2"><li><a href="profile.html">My Profile</a></li></div>
-                                                <div class="a2"><li><a href="#">Logout</a></li></div>
+                                                <div class="a2"><li><a href="#" id="logout">Logout</a></li></div>
                                             </ul>
-			</li>  
+			                            </li>  
 
                                         <li><a href="index.html#contact-section">Contact</a></li>					
           
@@ -125,25 +153,25 @@
                                 </nav>
                             </div>
                         </div>
-<div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                              <a href="profile.html"><img style="width:40px;height:40px;border-radius:50px;margin-right:30px;"src="p1.png"></a>
                             </div>
                         </div>  
 
- <div class="col-12">
+                        <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
-</div></div></div>
-
-</header>
-
+                    </div>
+                </div>
+            </div>
+    </header>
 
     <!-- bradcam_area  -->
     <div class="bradcam_area bradcam_bg_1">
-        <div class="container">
+        <div class="container">  
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-12">   
                     <div class="bradcam_text">
                         <h3>Candidate Info</h3>
                     </div>
@@ -151,24 +179,17 @@
             </div>
         </div>
     </div> 
-    <!-- <div  class="form-group">Election Name:
-        <select  class="form-input" id="ddlelection" required>
-         <option value="Select">Select</option>
-    </div> -->
-    <div id="selectoption">Election Name:
-        <select class="form-input" style="width: 200px;"> 
-    
-      <option value="select">select</option> 
-	</select>
-    </div>
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <div id="selectoption"><b style="color: black;">Election Name:</b>
+        <select class="form-input" id="ddlelection" style="width: 200px;"> 
+            <!-- <option value="select">select1</option> -->
+        </select>
+    </div> 
     <main class="cards">
         <div id="test12"></div>
     </main>
 
 
-<div class="row">
+<!-- <div class="row">
   <div class="column">
     <div class="card">
       <h3>Card 1</h3>
@@ -200,7 +221,7 @@
       <p>Some text</p>
     </div>
   </div>
-</div>
+</div> -->
 
  <footer class="footer">
         <div class="footer_top">
@@ -209,27 +230,26 @@
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <h3 class="footer_title">Online Voting</h3>
-                                   </div>
-<div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-twitter-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
+                        </div>
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                     </div>
                     <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
                         <div class="footer_widget">
@@ -253,15 +273,12 @@
                             </ul>
                         </div>
                     </div>
-                   
                 </div>
             </div>
         </div>
-        
-
-       
-<script>
-
+    </footer>    
+    
+    <script>
                 $(document).ready(function() {
                     // localStorage.removeItem('accessToken');
                     var accesstoken = sessionStorage.getItem('accessToken');
@@ -274,72 +291,82 @@
                        authHeaders.Authorization = 'Bearer ' + token.accessToken;
                     // $('#candidate').click(function () {
     
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "http://localhost:54546/api/Election/ListOfElectionAndElectorIdAndName",
-                data: "{}",
-                dataType: "json",
-            success: function (Result) {
-                $("#ddlelection").append($("<option></option>").val('select').attr('electionid','select').html('select'));
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "http://localhost:54546/api/Election/ListOfElectionAndElectorIdAndName",
+                        data: "{}",
+                        dataType: "json",
+                        success: function (Result) {
+                            $("#ddlelection").append($("<option></option>").val('select').attr('electionid','select').html('select'));
                 
-                $.each(Result.Data.ElectionIdAndName, function (key, value) {
-                    // console.log(key+ ":" +value.ElectionName);
-                     $("#ddlelection").append($("<option></option>").val(value.ElectionName).attr('electionid',+value.ElectionId).html(value.ElectionName));
-                    //  $('#ddlelection option').attr('electionid',+value.ElectionId);
-                });
-                $("#ddlelection").chosen();
-                // var electionid = $("#ddlelection option:selected").attr("electionid");
-                // if(electionid != '' && electionid != 'select')
-                // {
-                //     displaycandidatelist();
-                // }
-                $("#ddlelection").change(function() {
-                    displaycandidatelist();
-                });
-                function displaycandidatelist()
-                {
-                            $.ajax({
-                            url: "http://localhost:54546/api/Candidate/GetCandidateList",
-                            type: "GET",                            
-                            headers: authHeaders,
-                            dataType:"json",
-                            contentType: "application/html; charset=utf-8",
-                            success: function (response) {
-                                var electionid = $("#ddlelection option:selected").attr("electionid");
-                                $(".card").remove();
-                                $.each(response.Data, function (i) {
-                                    
-                                    if(response.Data[i].ElectionId == electionid)
-                                    {
-                                   // $("#ddlelection").append($("<option></option>").val(response.Data[i].ElectionName).attr('electionid',"select").html(response.Data[i].ElectionName));
-                                    var templateString = '<article class="card"><h2>' + response.Data[i].FullName + '</h2><p> Party Name : ' + response.Data[i].PoliticalPartyName + '</p><p> Province : ' + response.Data[i].CandidateElectionProvince + '</p><button id="tes">Start</button></article>';
-                                    $('#test12').append(templateString);
-                                    }
-                                })
-
-                                $("#test12").on("click", function () {
-                                    alert("test");
-                                });
-                                //alert(response.Data[0].CandidateElectionProvince);
+                            $.each(Result.Data.ElectionIdAndName, function (key, value) {
+                            // console.log(key+ ":" +value.ElectionName);
+                                $("#ddlelection").append($("<option></option>").val(value.ElectionName).attr('electionid',+value.ElectionId).html(value.ElectionName));
+                                //  $('#ddlelection option').attr('electionid',+value.ElectionId);
+                            });
+                            $("#ddlelection").chosen();
+                            // var electionid = $("#ddlelection option:selected").attr("electionid");
+                            // if(electionid != '' && electionid != 'select')
+                            // {
+                            //     displaycandidatelist();
+                            // }
+                            if($("#ddlelection option:selected").attr("electionid")=='select')
+                            {
+                                $("#selectoption").css('padding-bottom','10%');
                             }
-                        });
-                    // });
-                }
-            }
+                            $("#ddlelection").change(function() {
+                                displaycandidatelist();
+                            });
+                            
+                            function displaycandidatelist()
+                            {
+                                $.ajax({
+                                    url: "http://localhost:54546/api/Candidate/GetCandidateList",
+                                    type: "GET",                            
+                                    headers: authHeaders,
+                                    dataType:"json",
+                                    contentType: "application/html; charset=utf-8",
+                                    success: function (response) {
+                                        var electionid = $("#ddlelection option:selected").attr("electionid");
+                                        $(".card").remove();
+                                        if(electionid=='select')
+                                        {
+                                            $("#selectoption").css('padding-bottom','10%');
+                                        }
+                                        else
+                                        {
+                                            $("#selectoption").css('padding-bottom','');
+                                        }
+                                        $.each(response.Data, function (i) {
+                                    
+                                            if(response.Data[i].ElectionId == electionid)
+                                            {
+                                            // $("#ddlelection").append($("<option></option>").val(response.Data[i].ElectionName).attr('electionid',"select").html(response.Data[i].ElectionName));
+                                                var templateString = '<article class="card"><h2>' + response.Data[i].FullName + '</h2><p> Party Name : ' + response.Data[i].PoliticalPartyName + '</p><p> Province : ' + response.Data[i].CandidateElectionProvince + '</p></article>'; //<button id="tes">Start</button>
+                                                $('#test12').append(templateString);
+                                            }
+                                        })
+
+                                        // $("#test12").on("click", function () {
+                                        //     alert("test");
+                                        // });
+                                        //alert(response.Data[0].CandidateElectionProvince);
+                                    }
+                                });
+                                // });
+                            }
+                        }
+                    });
+                $("#logout").click(function(){
+                    if($("#logout").text()=='Logout')
+                    {
+                        sessionStorage.clear();
+                        location.reload(true);
+                    }
+                });
             });
-
-                
-                 });
-            </script>
-
-
-
-
-
-</body>
-      
-
+    </script>
 
 </body>
 </html>
