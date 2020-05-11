@@ -95,15 +95,17 @@
         </div>
     </div>
 <div class="esection">
-<button class="accordion">Section 1</button>
-<div class="panel">
- <p>Name: Zala Kuldip
-<br>aaaa: bbbbb
-<br>aaaa: bbbbb
-</p>
-</div>
+<!-- <div>
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <p>Name: Zala Kuldip
+        <br>aaaa: bbbbb
+        <br>aaaa: bbbbb
+        </p>
+    </div>
+</div> -->
 
-<button class="accordion">Section 2</button>
+<!-- <button class="accordion">Section 2</button>
 <div class="panel">
  <p>Name: Zala Kuldip
 <br>aaaa: bbbbb
@@ -117,7 +119,7 @@
 <br>aaaa: bbbbb
 <br>aaaa: bbbbb
 </p>
-</div>
+</div> -->
 </div>
 
 
@@ -179,23 +181,63 @@
         
 
 
+<script src="./js/vendor/jquery-3.3.1.min.js"></script>
 <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active1");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
+$(document).ready(function() {
+                    // localStorage.removeItem('accessToken');
+                    var accesstoken = sessionStorage.getItem('accessToken');
+                    if(accesstoken == null)
+                    {
+                        window.location.href="login.html";
+                    }
+                    var token = window.sessionStorage;
+                       var authHeaders = {};
+                       authHeaders.Authorization = 'Bearer ' + token.accessToken;
+                    // $('#candidate').click(function () {
+    
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: " http://localhost:54546/api/Election/ElectionList",
+                        data: "{}",
+                        dataType: "json",
+                        success: function (response) {
+                            $.each(response.Data, function (i) {
+                                    
+                                    // if(response.Data[i].ElectionId == electionid)
+                                    // {
+                                    // $("#ddlelection").append($("<option></option>").val(response.Data[i].ElectionName).attr('electionid',"select").html(response.Data[i].ElectionName));
+                                        var templateString = '<button class="accordion">'+ response.Data[i].ElectionName +'</button><div class="panel"><p>Election Title :'+response.Data[i].ElectionTitle+'<br>Start Date : '+ response.Data[i].StartDate +'<br>End Date : '+ response.Data[i].EndDate +'</p></div>'; //<button id="tes">Start</button>
+                                        $('.esection').append(templateString);
+                                    // }
+                                })
+                        }
+                    });
+                    $("#logout").click(function(){
+                        if($("#logout").text()=='Logout')
+                        {
+                            sessionStorage.clear();
+                            location.reload(true);
+                        }
+                    });
+});
 </script>
-
+<script>
+        var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active1");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
 
 
     
