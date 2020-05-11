@@ -37,10 +37,10 @@
                             <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"required/>
                         </div> -->
 			            <div class="form-group">Birth Date:
-                            <input type="date" class="form-input" name="date" required id="dob"/>
+                            <input type="date" class="form-input" name="date" max="2001-12-31" id="dob" required/>
                         </div>
 			            <div class="form-group">VoterId No:
-                            <input type="text" class="form-input" name="voterid" id="voterid" placeholder="Your VoterId"  required/>  <!--pattern="[X,J]{1}[S,F]{1}[K,P]{1}[0-9]{7}"-->
+                            <input type="text" class="form-input" name="voterid" id="voterid" placeholder="Your VoterId" pattern="[X,J]{1}[S,F]{1}[K,P]{1}[0-9]{7}"  required/>  
                         </div>
 			            <div class="form-group">Username/Electorname:
                             <input type="text" class="form-input" name="username" id="username" placeholder="Your Username" required/>
@@ -63,6 +63,7 @@
         </section>
 
     </div>
+
 
     <script src="./js/vendor/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
